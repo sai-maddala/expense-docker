@@ -13,20 +13,20 @@ backend:
 
 # docker run -d --name mysql --network expense -v mysql:/var/lib/mysql mysql:1.0.0
 mysql:
-    images: mysql:1.0.0
-    networks:
-    - expense
-    container_name: mysql
-    volumes:
-    - mysql: /var/lib/mysql
+  images: mysql:1.0.0
+  networks:
+  - expense
+  container_name: mysql
+  volumes:
+  - mysql: /var/lib/mysql
   
 frontend:
-    image: frontend:1.0.0
-    networks:
-    - expense
-    container_name: frontend
-    ports:
-    - 80:80
-    depends_on:
-    - backend
+  image: frontend:1.0.0
+  networks:
+  - expense
+  container_name: frontend
+  ports:
+  - 80:80
+  depends_on:
+  - backend 
   
